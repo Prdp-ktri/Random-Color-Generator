@@ -6,6 +6,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import RandomColor from "./components/random-color";
 import StarRating from "./components/star-rating";
+import ImageSlider from "./components/image-slider";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,7 +31,8 @@ function App() {
         </p>
       </div>
       {/* <RandomColor /> */}
-      <StarRating noOfStars={10} />
+      {/* <StarRating noOfStars={10} /> */}
+      <ImageSlider />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
