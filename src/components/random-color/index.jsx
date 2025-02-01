@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import React from "react";
+import ReactDOM from "react-dom"
 
-export default function randomColor() {
+export default function RandomColor() {
   const [typeOfColor, setTypeOfColor] = useState("hex");
   const [color, setColor] = useState("#000000");
 
@@ -8,19 +10,19 @@ export default function randomColor() {
     return Math.floor(Math.random() * length);
   }
 
-  function handleCreateHEXColor() {
+  function handleCreateRandomHEXColor() {
     // #000000
     const hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
     let hexColor = "#";
 
     for (let i = 0; i < 6; i++) {
-      hexColor + -hex[randomColorUtility(hex.length)];
+      hexColor += hex[randomColorUtility(hex.length)];
     }
 
     setColor(hexColor);
   }
 
-  function handlecreateRGBColor() {
+  function handlecreateRandomRGBColor() {
     const r = randomColorUtility(256);
     const g = randomColorUtility(256);
     const b = randomColorUtility(256);
@@ -29,8 +31,8 @@ export default function randomColor() {
   }
 
   useEffect(() => {
-    if (typeOfColor === "rgb") handlecreateRGBColor();
-    else handleCreateHEXColor();
+    if (typeOfColor === "rgb") handlecreateRandomRGBColor();
+    else handleCreateRandomHEXColor();
   }, [typeOfColor]);
 
   return (
@@ -45,7 +47,9 @@ export default function randomColor() {
       <button onClick={() => setTypeOfColor("rgb")}>Create RGB Color</button>
       <button
         onClick={
-          typeOfColor === "hex" ? handleCreateHEXColor : handlecreateRGBColor
+          typeOfColor === "hex"
+            ? handleCreateRandomHEXColor
+            : handlecreateRandomRGBColor
         }
       >
         Generate Random Color
