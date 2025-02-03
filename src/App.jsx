@@ -46,13 +46,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { LoadMoreData } from "./components/load-more-data";
 import ImageSlider from "./components/image-slider";
 
 function Home() {
   return (
     <div>
       <h1>Home Page</h1>
-      <ImageSlider url="https://picsum.photos/v2/list" limit={5} />
+      {/* <ImageSlider url="https://picsum.photos/v2/list" limit={5} /> */}
+      <LoadMoreData />
     </div>
   );
 }
